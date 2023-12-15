@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         HPText.text = "HP:" + CurrentPlayerData.HP;
         PointText.text = "Points:" + CurrentPlayerData.Points;
-        Vector3 PlayerPos = myRigidbody.position;
+        Vector3 PlayerPos = transform.position;
 
         if (Input.GetKey(KeyCode.W) && PlayerPos.y <= 138)
         {
@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
             GameObject.Instantiate(BulletPrefab,this.transform.position + new Vector3(15,0,0),BulletPrefab.transform.rotation);
             NextBulletCapability = 0.2f;
         }
+        PlayerPos.z = -1;
         gameObject.transform.position = PlayerPos;
         NextBulletCapability -= Time.deltaTime;
     }
