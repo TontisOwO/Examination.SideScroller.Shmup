@@ -12,10 +12,9 @@ public class EnemyController : MonoBehaviour
         EnemyPos.x -= MovementSpeed * Time.deltaTime;
         transform.position = EnemyPos;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D target)
     {
-        var wasBullet = collision.gameObject.GetComponent<BulletScript>();
-        if (wasBullet != null)
+        if (target.gameObject.tag.Equals("Bullet") == true)
         {
             CurrentPlayerData.Points += 100.0f;
         }

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject BulletPrefab;
+
     public PlayerData CurrentPlayerData = null;
 
     public TextMeshProUGUI HPText = null;
@@ -39,6 +41,7 @@ public class PlayerController : MonoBehaviour
         gameObject.transform.position = PlayerPos;
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            GameObject.Instantiate(BulletPrefab,this.transform.position,BulletPrefab.transform.rotation);
         }
     }
 }
