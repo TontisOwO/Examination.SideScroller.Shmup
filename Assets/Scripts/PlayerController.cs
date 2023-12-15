@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Rigidbody2D myRigidbody;
+
     public GameObject BulletPrefab;
 
     public PlayerData CurrentPlayerData = null;
@@ -12,12 +14,13 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI HPText = null;
     public TextMeshProUGUI PointText = null;
     public float MovementSpeed = 100.0f;
+    public float NextBulletCapability = 0.2f;
 
     void Update()
     {
         HPText.text = "HP:" + CurrentPlayerData.HP;
         PointText.text = "Points:" + CurrentPlayerData.Points;
-        Vector3 PlayerPos = gameObject.transform.position;
+        Vector3 PlayerPos = myRigidbody.position;
 
         if (Input.GetKey(KeyCode.W) && PlayerPos.y <= 138)
         {
@@ -38,10 +41,13 @@ public class PlayerController : MonoBehaviour
         {
             PlayerPos.x += MovementSpeed * Time.deltaTime;
         }
-        gameObject.transform.position = PlayerPos;
-        if (Input.GetKeyDown(KeyCode.Space))
+        
+        if (Input.GetKeyDown(KeyCode.Space) && NextBulletCapability < 0.0f)
         {
-            GameObject.Instantiate(BulletPrefab,this.transform.position,BulletPrefab.transform.rotation);
+            GameObject.Instantiate(BulletPrefab,this.transform.position + new Vector3(15,0,0),BulletPrefab.transform.rotation);
+            NextBulletCapability = 0.2f;
         }
+        gameObject.transform.position = PlayerPos;
+        NextBulletCapability -= Time.deltaTime;
     }
 }

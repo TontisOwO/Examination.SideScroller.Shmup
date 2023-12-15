@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public Rigidbody2D myRigidbody;
     public PlayerData CurrentPlayerData = null;
     public float MovementSpeed = 75;
     void Update()
     {
-        Vector3 EnemyPos = transform.position;
+        Vector3 EnemyPos = myRigidbody.position;
         EnemyPos.x -= MovementSpeed * Time.deltaTime;
         transform.position = EnemyPos;
     }

@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    
-    public float MovementSpeed = 150.0f;
-    public float DestructionTime = 125.0f;
+    public float MovementSpeed = 175.0f;
+    public float DestructionTime = 110.0f;
     void FixedUpdate()
     {
         DestructionTime -= 1.0f;

@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce03b66d230d95489f3f9dd5acf6d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myRigidbody: {fileID: 3522524895010513236}
   CurrentPlayerData: {fileID: 11400000, guid: 269f1f19bb097b14fb9bc746b2c7f721, type: 2}
   MovementSpeed: 75
 --- !u!61 &4729478907782572018

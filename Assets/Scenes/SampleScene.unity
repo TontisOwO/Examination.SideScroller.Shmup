@@ -134,6 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &754073441 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 9077166772354647957, guid: 4103049ef53f06842ace86fa0f2eab33, type: 3}
+  m_PrefabInstance: {fileID: 1155588683422483013}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &896987267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -345,12 +350,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9114544452066276971}
     - target: {fileID: 820241531833669759, guid: 4103049ef53f06842ace86fa0f2eab33, type: 3}
-      propertyPath: BulletPrefab
+      propertyPath: myRigidbody
       value: 
-      objectReference: {fileID: 1290921828375093379, guid: c071212c682766f48ade47ad89ae8fe5, type: 3}
+      objectReference: {fileID: 754073441}
     - target: {fileID: 5837255402450369249, guid: 4103049ef53f06842ace86fa0f2eab33, type: 3}
       propertyPath: m_Name
       value: Shmup Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6725093436547300572, guid: 4103049ef53f06842ace86fa0f2eab33, type: 3}
+      propertyPath: m_LocalScale.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6725093436547300572, guid: 4103049ef53f06842ace86fa0f2eab33, type: 3}
       propertyPath: m_LocalPosition.x
@@ -411,7 +420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4088102443562167737, guid: 2c55b653cd102c14abe2c99a30dd9172, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4088102443562167737, guid: 2c55b653cd102c14abe2c99a30dd9172, type: 3}
       propertyPath: m_LocalPosition.y
@@ -614,6 +623,14 @@ PrefabInstance:
     - target: {fileID: 6576977639394939497, guid: 7da92c28f2f2c03438d021e333bd194e, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843212394552570351, guid: 7da92c28f2f2c03438d021e333bd194e, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843212394552570351, guid: 7da92c28f2f2c03438d021e333bd194e, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 440
       objectReference: {fileID: 0}
     - target: {fileID: 7365764812590337170, guid: 7da92c28f2f2c03438d021e333bd194e, type: 3}
       propertyPath: m_SizeDelta.x
