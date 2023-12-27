@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public SceneLoader mySceneLoader = null;
+
     public Rigidbody2D myRigidbody;
 
     public GameObject BulletPrefab;
@@ -42,13 +44,18 @@ public class PlayerController : MonoBehaviour
             PlayerPos.x += MovementSpeed * Time.deltaTime;
         }
         
-        if (Input.GetKeyDown(KeyCode.Space) && NextBulletCapability < 0.0f)
+        if (Input.GetKey(KeyCode.Space) && NextBulletCapability < 0.0f)
         {
             GameObject.Instantiate(BulletPrefab,this.transform.position + new Vector3(15,0,0),BulletPrefab.transform.rotation);
-            NextBulletCapability = 0.2f;
+            NextBulletCapability = 0.3f;
         }
         PlayerPos.z = -1;
         gameObject.transform.position = PlayerPos;
         NextBulletCapability -= Time.deltaTime;
+        if (CurrentPlayerData.HP <= 0)
+        {
+            Debug.Log("Oh no u died");
+            mySceneLoader.LoadScene("Game Over");
+        }
     }
 }

@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SceneLoader : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public PlayerData CurrentPlayerData = null;
+    public void LoadScene(string aSceneName)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (aSceneName == "CurrentLevel")
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Level " + CurrentPlayerData.CurrentLevel);
+            CurrentPlayerData.HP = 3;
+        }
+        else
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(aSceneName);
+        }
+        if (aSceneName.StartsWith("Level"))
+        {
+            CurrentPlayerData.CurrentLevel = aSceneName[aSceneName.Length-1]-'0';
+        }
     }
 }

@@ -6,10 +6,12 @@ public class EnemyController : MonoBehaviour
 {
     public bool hitByBullet = false;
     public float HP = 1.0f;
+    public float Damage = 1.0f;
     public float PointGain = 100.0f;
     public Rigidbody2D myRigidbody;
     public PlayerData CurrentPlayerData = null;
     public float MovementSpeed = 75;
+    public bool isFriendly = false;
     void Update()
     {
         Vector3 EnemyPos = transform.position;
@@ -36,11 +38,15 @@ public class EnemyController : MonoBehaviour
             if (hitByBullet == true)
             {
                 CurrentPlayerData.Points += PointGain;
+                if (isFriendly == true)
+                {
+                    CurrentPlayerData.HP += Damage;
+                }
             }
         }
     }
     private void DealDamage()
     {
-        CurrentPlayerData.HP -= 1.0f;
+        CurrentPlayerData.HP -= Damage;
     }
 }

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 3
   Points: 0
+  CurrentLevel: 0
