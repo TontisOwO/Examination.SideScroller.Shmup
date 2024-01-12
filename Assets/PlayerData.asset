@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   HP: 3
-  Points: 2900
-  CurrentLevel: 2
+  Points: 0
+  CurrentLevel: 1
   TotalEnemiesKilled: 0
   PointsGained: 0
