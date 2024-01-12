@@ -35,9 +35,11 @@ public class EnemyController : MonoBehaviour
         if (HP <= 0)
         {
             GameObject.Destroy(gameObject);
+            CurrentPlayerData.TotalEnemiesKilled += 1;
             if (hitByBullet == true)
             {
                 CurrentPlayerData.Points += PointGain;
+                CurrentPlayerData.PointsGained += PointGain;
                 if (isFriendly == true)
                 {
                     CurrentPlayerData.HP += Damage;

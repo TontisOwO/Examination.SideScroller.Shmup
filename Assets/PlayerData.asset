@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 3
   Points: 0
-  CurrentLevel: 0
+  CurrentLevel: 1
+  TotalEnemiesKilled: 0
+  PointsGained: 0

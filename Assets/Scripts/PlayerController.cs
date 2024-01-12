@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -56,6 +58,10 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Oh no u died");
             mySceneLoader.LoadScene("Game Over");
+        }
+        if (CurrentPlayerData.TotalEnemiesKilled == 38 && CurrentPlayerData.CurrentLevel == 1)
+        {
+            mySceneLoader.LoadScene("Level 2");
         }
     }
 }
