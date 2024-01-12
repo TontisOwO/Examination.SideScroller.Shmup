@@ -7,9 +7,10 @@ public class BulletScript : MonoBehaviour
     public BoxCollider2D myBoxCollider;
     public Animator myAnimator = null;
     public float MovementSpeed = 175.0f;
-    public float DestructionTime = 3.0f;
+    public float DestructionTime = 2.2f;
     public float Animation = 0.0f;
     public bool Bullethit = false;
+    public PlayerData CurrentPlayerData = null;
     void Update()
     {
         DestructionTime -= Time.deltaTime;
@@ -32,12 +33,13 @@ public class BulletScript : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        var EnemyHit = collision.gameObject.GetComponent<EnemyController>();
-        if (EnemyHit != null)
+        myAnimator.SetBool("BulletHit", true);
+        MovementSpeed = 0;
+        Bullethit = true;
+        var PlayerScript = collision.gameObject.GetComponent<PlayerController>();
+        if(PlayerScript == true)
         {
-            myAnimator.SetBool("BulletHit", true);
-            MovementSpeed = 0;
-            Bullethit = true;
+            CurrentPlayerData.HP -= 1;
         }
     }
 }

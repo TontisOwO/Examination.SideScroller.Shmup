@@ -79,7 +79,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 1402879421, guid: f90d69158fceb0a48bbb8896e1c3b119, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 28, y: 27}
   m_AdaptiveModeThreshold: 0.5
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5350ae727dd57004e86cd86c68756282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mySceneLoader: {fileID: 0}
   myRigidbody: {fileID: 9077166772354647957}
   BulletPrefab: {fileID: 1290921828375093379, guid: c071212c682766f48ade47ad89ae8fe5, type: 3}
   CurrentPlayerData: {fileID: 11400000, guid: 269f1f19bb097b14fb9bc746b2c7f721, type: 2}

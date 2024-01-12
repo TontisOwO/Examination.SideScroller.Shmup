@@ -12,12 +12,24 @@ public class EnemyController : MonoBehaviour
     public PlayerData CurrentPlayerData = null;
     public float MovementSpeed = 75;
     public bool isFriendly = false;
+    public bool shoots = false;
+    public float CanShoot = 0.0f;
+    public GameObject EnemyBulletPrefab;
     void Update()
     {
         Vector3 EnemyPos = transform.position;
         EnemyPos.x -= MovementSpeed * Time.deltaTime;
         EnemyPos.z = -1;
         transform.position = EnemyPos;
+        if (shoots == true)
+        {
+            CanShoot -= Time.deltaTime; 
+            if(CanShoot < 0 && transform.position.x <= 210)
+            {
+                CanShoot = 1.75f;
+                GameObject.Instantiate(EnemyBulletPrefab, this.transform.position + new Vector3(-15, 0, 0), EnemyBulletPrefab.transform.rotation);
+            }
+        }
     }
     private void OnCollisionEnter2D(Collision2D target)
     {

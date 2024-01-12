@@ -362,11 +362,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ebc3b7e53bff9d449434e78c5a0b0a6, type: 3}
---- !u!50 &754073441 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 9077166772354647957, guid: 4103049ef53f06842ace86fa0f2eab33, type: 3}
-  m_PrefabInstance: {fileID: 1155588683422483013}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &832003322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -877,20 +872,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9114544452066276971}
     - target: {fileID: 820241531833669759, guid: 4103049ef53f06842ace86fa0f2eab33, type: 3}
-      propertyPath: myRigidbody
-      value: 
-      objectReference: {fileID: 754073441}
-    - target: {fileID: 820241531833669759, guid: 4103049ef53f06842ace86fa0f2eab33, type: 3}
       propertyPath: mySceneLoader
       value: 
       objectReference: {fileID: 1942384579}
     - target: {fileID: 5837255402450369249, guid: 4103049ef53f06842ace86fa0f2eab33, type: 3}
       propertyPath: m_Name
       value: Shmup Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6725093436547300572, guid: 4103049ef53f06842ace86fa0f2eab33, type: 3}
-      propertyPath: m_LocalScale.y
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6725093436547300572, guid: 4103049ef53f06842ace86fa0f2eab33, type: 3}
       propertyPath: m_LocalPosition.x
@@ -931,10 +918,6 @@ PrefabInstance:
     - target: {fileID: 6725093436547300572, guid: 4103049ef53f06842ace86fa0f2eab33, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9077166772354647957, guid: 4103049ef53f06842ace86fa0f2eab33, type: 3}
-      propertyPath: m_GravityScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
